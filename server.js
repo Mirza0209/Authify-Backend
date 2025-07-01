@@ -2,7 +2,17 @@ import { app } from "./app.js";
 import dotenv from "dotenv";
 import { dbConnection } from "./Config/database.js";
 import cloudinary from "cloudinary";
+import cors from "cors";
 
+// cors options means who can access our backend from frontend
+const corsOptions = {
+  origin: process.env.ORIGIN,
+  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+  credentials: true,
+};
+
+// const _dirname = path.resolve();
+app.use(cors(corsOptions));
 // Handling Uncaught Exception(error) it happen when an variable is used without declaration
 process.on("uncaughtException", (err) => {
   console.log(`Error: ${err.message}`);
@@ -12,7 +22,7 @@ process.on("uncaughtException", (err) => {
 
 //Providing env data
 dotenv.config({
-  path: "/Backend/.env",
+  path: ".env",
 });
 
 //Calling database connection method
@@ -26,7 +36,9 @@ cloudinary.config({
 });
 
 //Listing app on specific port
-const server = app.listen(process.env.PORT, () => {
+
+const PORT = process.env.PORT || 4000;
+const server = app.listen(PORT, () => {
   console.log(`Server is working on http://localhost:${process.env.PORT}`);
 });
 
