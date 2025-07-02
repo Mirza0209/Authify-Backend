@@ -1,5 +1,5 @@
 import express from "express";
-export const app = express();
+const app = express();
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { error } from "../Middlewares/error.middleware.js";
@@ -35,3 +35,5 @@ app.use("/api/v1/users", userRouter);
 
 //Using error() middleware for throwing ApiError
 app.use(error);
+
+export default app;

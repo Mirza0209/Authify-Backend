@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import { dbConnection } from "./Config/database.js";
 import cloudinary from "cloudinary";
 import cors from "cors";
-import { app } from "./api/index.js";
+import app from "./api/index.js";
 
 // cors options means who can access our backend from frontend
 const corsOptions = {
