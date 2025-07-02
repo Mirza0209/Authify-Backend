@@ -25,6 +25,10 @@ app.use(fileUpload({ useTempFiles: true }));
 import userRouter from "../Routes/user.routes.js";
 import path from "path";
 
+app.get("/", (req, res) => {
+  res.send("Authify Backend is running on Vercel ✅");
+});
+
 //For Users
 app.use("/api/v1/users", userRouter);
 
