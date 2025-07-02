@@ -2,7 +2,7 @@ import express from "express";
 export const app = express();
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { error } from "./Middlewares/error.middleware.js";
+import { error } from "../Middlewares/error.middleware.js";
 import fileUpload from "express-fileupload";
 
 // cors options means who can access our backend from frontend
@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(fileUpload({ useTempFiles: true }));
 
 //Routes
-import userRouter from "./Routes/user.routes.js";
+import userRouter from "../Routes/user.routes.js";
 import path from "path";
 
 //For Users
