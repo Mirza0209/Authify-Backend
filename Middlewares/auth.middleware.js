@@ -1,6 +1,6 @@
 import { User } from "../Models/user.model.js";
 import { ApiError } from "../Utils/ApiError.js";
-import { AsyncHandler } from "../utils/AsyncHandler.js";
+import { AsyncHandler } from "../Utils/AsyncHandler.js";
 import jwt from "jsonwebtoken";
 
 //Check is user logged in or not
