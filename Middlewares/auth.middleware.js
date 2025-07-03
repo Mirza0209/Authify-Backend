@@ -45,7 +45,7 @@ const isAuthorizedRoles = (roles) => {
         )
       );
     }
-    next();
+    return next();
   };
 };
 
