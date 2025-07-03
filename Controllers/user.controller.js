@@ -178,15 +178,15 @@ const userRegistration = AsyncHandler(async (req, res, next) => {
       // console.log("✅ Sending verification code...");
       sendVerificationCode(verificationCode, email, phone, res, name, next);
 
-      return res
-        .status(200)
-        .json(
-          new ApiResponse(
-            200,
-            isUserExist,
-            "You have attempted to register before. Please check your email for the verification code."
-          )
-        );
+      // return res
+      //   .status(200)
+      //   .json(
+      //     new ApiResponse(
+      //       200,
+      //       isUserExist,
+      //       "You have attempted to register before. Please check your email for the verification code."
+      //     )
+      //   );
     }
 
     //user data
