@@ -84,8 +84,8 @@ async function sendVerificationCode(
       .status(200)
       .json(new ApiResponse(200, data, `Verification code sent to ${email}`));
   } catch (error) {
-    // console.error("❌ Error in sendVerificationCode:", error);
-    return next(new ApiError("Server error.Please try later...!"));
+    console.error("❌ Error in sendVerificationCode:", error);
+    return next(new ApiError("Server error.Please try later...!" , 500));
   }
 }
 
@@ -224,6 +224,7 @@ const userRegistration = AsyncHandler(async (req, res, next) => {
     // 8=send verification code via node mailer with html template
     // console.log("✅ Sending verification email...");
     sendVerificationCode(verificationCode, email, phone, res, name , next);
+    return;
   } catch (error) {
     // console.log("register error", error.message);
 
