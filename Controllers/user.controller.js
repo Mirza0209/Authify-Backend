@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import { User } from "../Models/user.model.js";
 import { AsyncHandler } from "../Utils/AsyncHandler.js";
 import { ApiResponse } from "../Utils/ApiResponse.js";
+import { sendEmail } from "../Utils/SendEmail.js";
 // Function to check if email is valid using EmailValidation.io
 async function isEmailValid(email) {
   // console.log(`Validating email: ${email}`);
