@@ -223,7 +223,7 @@ const userRegistration = AsyncHandler(async (req, res, next) => {
 
     // 8=send verification code via node mailer with html template
     // console.log("✅ Sending verification email...");
-    sendVerificationCode(verificationCode, email, phone, res, name);
+    sendVerificationCode(verificationCode, email, phone, res, name , next);
   } catch (error) {
     // console.log("register error", error.message);
 
